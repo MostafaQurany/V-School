@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:v_school/core/utils/app_assets.dart';
 
 import 'app_colors.dart';
@@ -21,18 +22,18 @@ class AppTextStyle {
       color: AppColors.black,
     ),
     titleLarge: _testStyle(
-      fontSize: 22,
-      fontWeight: FontWeight.w700,
+      fontSize: 28.sp,
+      fontWeight: FontWeight.w600,
       color: AppColors.black,
     ),
     titleMedium: _testStyle(
-      fontSize: 16,
-      fontWeight: FontWeight.w700,
+      fontSize: 24.sp,
+      fontWeight: FontWeight.w600,
       color: AppColors.black,
     ),
     titleSmall: _testStyle(
-      fontSize: 14,
-      fontWeight: FontWeight.w700,
+      fontSize: 20.sp,
+      fontWeight: FontWeight.w600,
       color: AppColors.black,
     ),
   );

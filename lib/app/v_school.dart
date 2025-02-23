@@ -12,7 +12,8 @@ class VSchool extends StatelessWidget {
       designSize: const Size(402, 874),
       minTextAdapt: true,
       splitScreenMode: true,
-      child: MaterialApp.router(
+      useInheritedMediaQuery: true,
+      builder: (context, child) => MaterialApp.router(
         title: 'Flutter Demo',
         theme: AppTheme.lightTheme,
         routerConfig: AppRouter.goRouterGenerator(),
