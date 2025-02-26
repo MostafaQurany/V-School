@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:v_school/core/extension/spacer.dart';
-import 'package:v_school/core/theme/app_colors.dart';
-import 'package:v_school/core/utils/app_assets.dart';
 import 'package:v_school/core/utils/app_constants.dart';
+import 'package:v_school/core/widgets/animated_entrance.dart';
+import 'package:v_school/core/widgets/custom_button.dart';
+import 'package:v_school/features/authentication/cubit/login_cubit.dart';
+import 'package:v_school/features/authentication/ui/widgets/email_text_form_field.dart';
+import 'package:v_school/features/authentication/ui/widgets/login_state_widget.dart';
+import 'package:v_school/features/authentication/ui/widgets/logo_head_title_login_screen.dart';
+import 'package:v_school/features/authentication/ui/widgets/password_text_form_field.dart';
+import 'package:v_school/features/authentication/ui/widgets/remember_me_and_forget_password_widget.dart';
 import 'package:v_school/features/authentication/ui/widgets/selected_role_widget.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -18,39 +24,48 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: AppConstants.screenPadding,
-            child: Column(
-              children: [
-                Image.asset(
-                  AppAssets.pencilsImageLoginScreen,
-                  width: 120.w,
-                  height: 120.h,
-                ),
-                Text(
-                  "Welcome Back!",
-                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        color: AppColors.primary,
+        child: Padding(
+          padding: AppConstants.screenPadding,
+          child: AnimatedEntrance(
+            child: LoginStateWidget(
+              child: Column(
+                children: [
+                  Expanded(
+                    flex: 8,
+                    child: SingleChildScrollView(
+                      child: Form(
+                        key: LoginCubit.get(context).formKey,
+                        child: Column(
+                          spacing: 24.h,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            LogoHeadTitleLoginScreen(),
+                            SelectedRoleWidget(),
+                            EmailTextFormField(),
+                            PasswordTextFormField(),
+                            RememberMeAndForgetPasswordWidget(),
+                          ],
+                        ),
                       ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Let's sign in.",
-                      style: Theme.of(context).textTheme.titleSmall,
                     ),
-                    Image.asset(
-                      AppAssets.pencilImageLoginScreen,
-                      width: 30.w,
-                      height: 30.h,
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CustomButton(
+                          text: "Sign in",
+                          onTap: () {
+                            context.read<LoginCubit>().login();
+                          },
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                SelectedRoleWidget(),
-                hSpace(24),
-              ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

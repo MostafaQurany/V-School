@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:v_school/core/theme/app_colors.dart';
+import 'package:v_school/core/utils/app_constants.dart';
 
 class SelectRoleCard extends StatelessWidget {
   final String roleName;
@@ -21,15 +22,17 @@ class SelectRoleCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: AnimatedContainer(
-        duration: const Duration(milliseconds: 250), // Animation duration
+        duration: Duration(
+            milliseconds:
+                AppConstants.animationDuration250), // Animation duration
         curve: Curves.easeInOut, // Animation curve
         width: isSelected ? 170.w : 165.w,
         height: isSelected ? 120.h : 115.h,
         decoration: BoxDecoration(
-          color: AppColors.primaryWithOpacity, // Animated color
+          color: AppColors.background, // Animated color
           borderRadius: BorderRadius.circular(8.r),
           border: Border.all(
-            color: isSelected ? AppColors.primary : AppColors.secondary,
+            color: isSelected ? AppColors.primary : AppColors.transparent,
             width: isSelected ? 2 : 1, // Animated border width
           ),
         ),

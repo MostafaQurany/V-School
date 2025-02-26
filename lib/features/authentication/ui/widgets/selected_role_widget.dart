@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:v_school/core/utils/app_assets.dart';
+import 'package:v_school/features/authentication/cubit/login_cubit.dart';
+import 'package:v_school/features/authentication/data/model/login_request.dart';
 import 'package:v_school/features/authentication/ui/widgets/select_role_card.dart';
 
 class SelectedRoleWidget extends StatefulWidget {
@@ -11,7 +13,6 @@ class SelectedRoleWidget extends StatefulWidget {
 }
 
 class _SelectedRoleWidgetState extends State<SelectedRoleWidget> {
-  String roleSelected = '';
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -29,15 +30,16 @@ class _SelectedRoleWidgetState extends State<SelectedRoleWidget> {
             SelectRoleCard(
               roleName: "Teacher",
               image: AppAssets.teacherButtonIconLoginScreen,
-              isSelected: roleSelected.contains("Teacher"),
+              isSelected:
+                  LoginCubit.get(context).loginRole == LoginRole.teacher,
               onTap: () {
-                if (roleSelected == "Teacher") {
+                if (LoginCubit.get(context).loginRole == LoginRole.teacher) {
                   setState(() {
-                    roleSelected = "";
+                    LoginCubit.get(context).loginRole = LoginRole.none;
                   });
                 } else {
                   setState(() {
-                    roleSelected = "Teacher";
+                    LoginCubit.get(context).loginRole = LoginRole.teacher;
                   });
                 }
               },
@@ -45,15 +47,15 @@ class _SelectedRoleWidgetState extends State<SelectedRoleWidget> {
             SelectRoleCard(
               roleName: "Parent",
               image: AppAssets.parentsButtonIconLoginScreen,
-              isSelected: roleSelected.contains("Parent"),
+              isSelected: LoginCubit.get(context).loginRole == LoginRole.parent,
               onTap: () {
-                if (roleSelected == "Parent") {
+                if (LoginCubit.get(context).loginRole == LoginRole.parent) {
                   setState(() {
-                    roleSelected = "";
+                    LoginCubit.get(context).loginRole = LoginRole.none;
                   });
                 } else {
                   setState(() {
-                    roleSelected = "Parent";
+                    LoginCubit.get(context).loginRole = LoginRole.parent;
                   });
                 }
               },

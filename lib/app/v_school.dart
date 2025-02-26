@@ -14,6 +14,7 @@ class VSchool extends StatelessWidget {
       splitScreenMode: true,
       useInheritedMediaQuery: true,
       builder: (context, child) => MaterialApp.router(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: AppTheme.lightTheme,
         routerConfig: AppRouter.goRouterGenerator(),
