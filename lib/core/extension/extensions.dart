@@ -15,3 +15,7 @@ SizedBox bothSpace(
       height: h.h,
       width: w.w,
     );
+
+extension MyStringExtension on String? {
+  bool get isNullOrEmpty => this == null || this!.isEmpty;
+}

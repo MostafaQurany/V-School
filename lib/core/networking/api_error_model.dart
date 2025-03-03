@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:v_school/features/authentication/data/model/authentication_error_response_model.dart';
 
 part 'api_error_model.g.dart';
 
@@ -6,6 +7,8 @@ part 'api_error_model.g.dart';
 class ApiErrorModel {
   String? message;
   ApiErrors? errors;
+
+  AuthenticationErrorResponseModel? authenticationErrorResponse;
 
   ApiErrorModel({
     this.message,

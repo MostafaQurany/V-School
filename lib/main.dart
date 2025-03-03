@@ -11,6 +11,7 @@ void main() async {
   await setupDI();
   // bloc
   Bloc.observer = AppBlocObserver();
+  //
 
   runApp(const VSchool());
 }

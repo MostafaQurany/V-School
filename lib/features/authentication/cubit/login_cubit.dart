@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:v_school/features/authentication/data/model/forget_password_request.dart';
 import 'package:v_school/features/authentication/data/model/login_request.dart';
 import 'package:v_school/features/authentication/repo/login_repo.dart';
 
@@ -21,7 +22,7 @@ class LoginCubit extends Cubit<LoginState> {
 
   Future<void> login() async {
     if (formKey.currentState!.validate()) {
-      emit(const LoginState.loading());
+      emit(const LoginState.loginLoading());
       try {
         final request = LoginRequest(
           email: emailController.text.trim(),
@@ -30,16 +31,36 @@ class LoginCubit extends Cubit<LoginState> {
         );
         final response = await _loginRepo.login(request);
         response.when(
-          success: (data) => emit(LoginState.success()),
+          success: (data) => emit(LoginState.loginSuccess()),
           error: (message) {
-            emit(LoginState.error(message));
+            emit(LoginState.loginError(message));
           },
         );
       } catch (e) {
-        emit(const LoginState.error("Something went wrong"));
+        emit(const LoginState.loginError("Something went wrong"));
       }
     } else {
-      emit(const LoginState.error("Please fill all fields"));
+      emit(const LoginState.loginError("Please fill all fields"));
+    }
+  }
+
+  Future<void> forgetPassword() async {
+    if (formKey.currentState!.validate()) {
+      emit(const LoginState.forgotPasswordLoading());
+      try {
+        final request = ForgetPasswordRequest(
+          email: emailController.text.trim(),
+        );
+        final response = await _loginRepo.forgotPassword(request);
+        response.when(
+          success: (data) => emit(LoginState.forgotPasswordSuccess()),
+          error: (message) => emit(LoginState.forgotPasswordError(message)),
+        );
+      } catch (e) {
+        emit(const LoginState.forgotPasswordError("Something went wrong"));
+      }
+    } else {
+      emit(const LoginState.forgotPasswordError("Please fill the field"));
     }
   }
 }

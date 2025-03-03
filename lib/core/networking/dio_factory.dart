@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioFactory {
@@ -31,7 +29,7 @@ class DioFactory {
       responseBody: true,
       requestHeader: true,
     ));
-    dio!.interceptors.add(AuthInterceptor(secureStorage: _secureStorage));
+    //  dio!.interceptors.add(AuthInterceptor(secureStorage: _secureStorage));
   }
 }
 

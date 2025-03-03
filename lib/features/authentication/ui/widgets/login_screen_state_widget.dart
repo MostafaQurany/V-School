@@ -2,32 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:v_school/features/authentication/cubit/login_cubit.dart';
 
-class LoginStateWidget extends StatelessWidget {
+class LoginScreenStateWidget extends StatelessWidget {
   final Widget child;
-  const LoginStateWidget({super.key, required this.child});
+  const LoginScreenStateWidget({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       listenWhen: (previous, current) =>
-          current is Error || current is Loading || current is Success,
+          current is LoginError ||
+          current is LoginLoading ||
+          current is LoginSuccess,
       listener: (context, state) {
         state.whenOrNull(
-          error: (message) {
+          loginError: (message) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(message),
               ),
             );
           },
-          loading: () {
+          loginLoading: () {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
                 content: Text("Loading"),
               ),
             );
           },
-          success: () {
+          loginSuccess: () {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
                 content: Text("Success"),

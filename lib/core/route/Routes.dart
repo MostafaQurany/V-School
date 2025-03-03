@@ -1,4 +1,5 @@
 class Routes {
-  static String loginScreen = "login screen";
-  static String homeScreen = "home screen";
+  static String loginScreen = "/LoginScreen";
+  static String homeScreen = "/HomeScreen";
+  static String forgotPassword = "/ForgotPassword";
 }

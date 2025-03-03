@@ -3,10 +3,14 @@ part of 'login_cubit.dart';
 @freezed
 class LoginState with _$LoginState {
   const factory LoginState.initial() = _Initial;
-  const factory LoginState.loading() = Loading;
-  const factory LoginState.success() = Success;
-  const factory LoginState.error(String message) = Error;
-  const factory LoginState.invalidEmail(String message) = InvalidEmail;
-  const factory LoginState.invalidPassword(String message) = InvalidPassword;
-  const factory LoginState.invalidRole(String message) = InvalidRole;
+
+  // login states
+  const factory LoginState.loginLoading() = LoginLoading;
+  const factory LoginState.loginSuccess() = LoginSuccess;
+  const factory LoginState.loginError(String message) = LoginError;
+  // forget password states
+  const factory LoginState.forgotPasswordLoading() = ForgotPasswordLoading;
+  const factory LoginState.forgotPasswordSuccess() = ForgotPasswordSuccess;
+  const factory LoginState.forgotPasswordError(String message) =
+      ForgotPasswordError;
 }

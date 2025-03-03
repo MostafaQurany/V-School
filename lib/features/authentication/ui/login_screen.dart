@@ -6,7 +6,7 @@ import 'package:v_school/core/widgets/animated_entrance.dart';
 import 'package:v_school/core/widgets/custom_button.dart';
 import 'package:v_school/features/authentication/cubit/login_cubit.dart';
 import 'package:v_school/features/authentication/ui/widgets/email_text_form_field.dart';
-import 'package:v_school/features/authentication/ui/widgets/login_state_widget.dart';
+import 'package:v_school/features/authentication/ui/widgets/login_screen_state_widget.dart';
 import 'package:v_school/features/authentication/ui/widgets/logo_head_title_login_screen.dart';
 import 'package:v_school/features/authentication/ui/widgets/password_text_form_field.dart';
 import 'package:v_school/features/authentication/ui/widgets/remember_me_and_forget_password_widget.dart';
@@ -27,44 +27,28 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Padding(
           padding: AppConstants.screenPadding,
           child: AnimatedEntrance(
-            child: LoginStateWidget(
-              child: Column(
-                children: [
-                  Expanded(
-                    flex: 8,
-                    child: SingleChildScrollView(
-                      child: Form(
-                        key: LoginCubit.get(context).formKey,
-                        child: Column(
-                          spacing: 24.h,
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            LogoHeadTitleLoginScreen(),
-                            SelectedRoleWidget(),
-                            EmailTextFormField(),
-                            PasswordTextFormField(),
-                            RememberMeAndForgetPasswordWidget(),
-                          ],
-                        ),
+            child: LoginScreenStateWidget(
+              child: SingleChildScrollView(
+                child: Form(
+                  key: LoginCubit.get(context).formKey,
+                  child: Column(
+                    spacing: 24.h,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      LogoHeadTitleLoginScreen(),
+                      SelectedRoleWidget(),
+                      EmailTextFormField(),
+                      PasswordTextFormField(),
+                      RememberMeAndForgetPasswordWidget(),
+                      CustomButton(
+                        text: "Sign in",
+                        onTap: () {
+                          context.read<LoginCubit>().login();
+                        },
                       ),
-                    ),
+                    ],
                   ),
-                  Expanded(
-                    flex: 2,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CustomButton(
-                          text: "Sign in",
-                          onTap: () {
-                            context.read<LoginCubit>().login();
-                          },
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
           ),

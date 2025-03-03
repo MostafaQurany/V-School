@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:v_school/core/route/Routes.dart';
 import 'package:v_school/core/theme/app_colors.dart';
 import 'package:v_school/core/utils/app_constants.dart';
 import 'package:v_school/features/authentication/cubit/login_cubit.dart';
@@ -56,18 +58,25 @@ class _RememberMeAndForgetPasswordWidgetState
                       ),
               ),
               SizedBox(width: 2.w), // Spacing between icon and text
-              Text(
-                ' Remember me',
-                style: Theme.of(context).textTheme.bodyLarge,
+              SizedBox(
+                width: 150.w,
+                child: Text(
+                  ' Remember me',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             ],
           ),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            context.push(Routes.forgotPassword);
+          },
           child: Text(
             'Forgot Password?',
-            style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                   color: AppColors.primary,
                 ),
           ),

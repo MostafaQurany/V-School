@@ -6,6 +6,8 @@ class AppConstants {
   static String teacherLoginRole = "teacher";
   static String parentLoginRole = "parent";
 
+  /// App Secure Storage constants
+  static String userToken = "User_Token";
   // screen padding
   static EdgeInsets screenPadding =
       EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w);
