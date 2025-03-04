@@ -31,6 +31,8 @@ dependencies:
   get_it: ^8.0.3
   # secure the token and cache it
   flutter_secure_storage: ^9.2.4
+  # images and pikers
+  flutter_svg: ^2.0.17
 
 
 dev_dependencies:
@@ -48,6 +50,7 @@ flutter:
   assets:
     - assets/image/
     - assets/icons/
+    - assets/svgs/
 
 
   fonts:
