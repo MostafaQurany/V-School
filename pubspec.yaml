@@ -33,7 +33,8 @@ dependencies:
   flutter_secure_storage: ^9.2.4
   # images and pikers
   flutter_svg: ^2.0.17
-
+  # ui helpers
+  enhance_stepper: ^1.0.1
 
 dev_dependencies:
   flutter_test:

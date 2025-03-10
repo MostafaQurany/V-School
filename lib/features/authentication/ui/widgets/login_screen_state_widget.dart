@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:v_school/core/route/Routes.dart';
 import 'package:v_school/features/authentication/cubit/login_cubit.dart';
 
 class LoginScreenStateWidget extends StatelessWidget {
@@ -35,6 +37,7 @@ class LoginScreenStateWidget extends StatelessWidget {
                 content: Text("Success"),
               ),
             );
+            context.go(Routes.homeScreen);
           },
         );
       },

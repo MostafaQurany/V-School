@@ -3,9 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:v_school/core/theme/app_colors.dart';
 import 'package:v_school/core/utils/app_assets.dart';
+import 'package:v_school/features/events/data/models/get_event_response.dart';
 
 class EventItem extends StatelessWidget {
-  const EventItem({Key? key}) : super(key: key);
+  final Event event;
+  const EventItem({super.key, required this.event});
 
   @override
   Widget build(BuildContext context) {

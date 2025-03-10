@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:v_school/core/helpers/app_secure_storage.dart';
+import 'package:v_school/core/utils/app_constants.dart';
 import 'package:v_school/features/authentication/data/model/forget_password_request.dart';
 import 'package:v_school/features/authentication/data/model/login_request.dart';
 import 'package:v_school/features/authentication/repo/login_repo.dart';
@@ -31,7 +33,12 @@ class LoginCubit extends Cubit<LoginState> {
         );
         final response = await _loginRepo.login(request);
         response.when(
-          success: (data) => emit(LoginState.loginSuccess()),
+          success: (data) {
+            AppSecureStorage.saveData(
+                key: AppConstants.userToken,
+                value: data.userData?.accessToken ?? '');
+            emit(LoginState.loginSuccess());
+          },
           error: (message) {
             emit(LoginState.loginError(message));
           },
