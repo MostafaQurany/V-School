@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
-import 'package:v_school/core/route/Routes.dart';
+import 'package:v_school/core/utils/app_constants.dart';
 import 'package:v_school/features/events/cubit/events_cubit.dart';
 import 'package:v_school/features/events/ui/widgets/event_item.dart';
+import 'package:v_school/features/events/ui/widgets/events_list_search_bar_filter.dart';
 
 class EventsListScreen extends StatelessWidget {
   const EventsListScreen({Key? key}) : super(key: key);
@@ -28,29 +28,27 @@ class EventsListScreen extends StatelessWidget {
         builder: (context, state) {
           return state.maybeWhen(
             getEventsSuccess: (events) {
-              return ListView.builder(
-                itemCount: events.length,
-                physics: BouncingScrollPhysics(), // Smooth scrolling effect
-                padding: EdgeInsets.symmetric(
-                    horizontal: 10.w), // Prevents cutting edges
-                itemBuilder: (context, index) {
-                  final event = events[index];
-                  return Padding(
-                    padding: EdgeInsets.only(right: 10.w),
-                    // Adds space between items
-                    child: GestureDetector(
-                      onTap: () {
-                        context.pushNamed(
-                          Routes.eventDetailsScreenName,
-                          extra: event, // Passing the event object directly
-                        );
-                      },
-                      child: EventItem(
-                        event: events[index],
+              return Padding(
+                padding: AppConstants.screenPadding,
+                child: Column(
+                  children: [
+                    EventsListSearchBarFilter(),
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: events.length,
+                        physics: BouncingScrollPhysics(),
+                        itemBuilder: (context, index) {
+                          return Padding(
+                            padding: EdgeInsets.only(bottom: 12.h),
+                            child: EventItem(
+                              event: events[index],
+                            ),
+                          );
+                        },
                       ),
                     ),
-                  );
-                },
+                  ],
+                ),
               );
             },
             getEventsLoading: () {

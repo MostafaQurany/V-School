@@ -27,8 +27,10 @@ class Event {
   int? isFeatured;
   String? image;
   int? views;
-  DateTime? startDate;
-  DateTime? endDate;
+  @JsonKey(name: 'start_date')
+  String? startDate;
+  @JsonKey(name: 'end_date')
+  String? endDate;
   String? address;
   Country? country;
   @JsonKey(name: 'state')

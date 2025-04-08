@@ -11,4 +11,6 @@ class Routes {
   static String eventsListScreenName = "eventsListScreen";
   static String eventDetailsScreen = "/eventDetailsScreen";
   static String eventDetailsScreenName = "eventDetailsScreen";
+  static String eventFilterScreen = "/eventFilterScreen";
+  static String eventFilterScreenName = "eventFilterScreen";
 }

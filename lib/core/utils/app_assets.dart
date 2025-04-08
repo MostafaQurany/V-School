@@ -10,6 +10,7 @@ class AppAssets {
       _iconPath('parents_button_icon_login_screen.png');
   static String teacherButtonIconLoginScreen =
       _iconPath('teacher_button_icon_login_screen.png');
+
   // svg
 
   static String locationIconSvg = _svgPath("location_icon.svg");
@@ -21,6 +22,8 @@ class AppAssets {
   static String quizIconSvg = _svgPath("quiz_icon.svg");
   static String examScheduleIconSvg = _svgPath("exam_schedule_icon.svg");
   static String classScheduleIconSvg = _svgPath("class_schedule_icon.svg");
+  static String searchIconSvg = _svgPath("search_icon.svg");
+  static String filterIconSvg = _svgPath("filter_icon.svg");
 
   // =================================================================
   static _imagePath(String imageName) => "assets/image/$imageName";

@@ -30,12 +30,8 @@ Event _$EventFromJson(Map<String, dynamic> json) => Event(
       isFeatured: (json['isFeatured'] as num?)?.toInt(),
       image: json['image'] as String?,
       views: (json['views'] as num?)?.toInt(),
-      startDate: json['startDate'] == null
-          ? null
-          : DateTime.parse(json['startDate'] as String),
-      endDate: json['endDate'] == null
-          ? null
-          : DateTime.parse(json['endDate'] as String),
+      startDate: json['start_date'] as String?,
+      endDate: json['end_date'] as String?,
       address: json['address'] as String?,
       country: json['country'] == null
           ? null
@@ -55,8 +51,8 @@ Map<String, dynamic> _$EventToJson(Event instance) => <String, dynamic>{
       'isFeatured': instance.isFeatured,
       'image': instance.image,
       'views': instance.views,
-      'startDate': instance.startDate?.toIso8601String(),
-      'endDate': instance.endDate?.toIso8601String(),
+      'start_date': instance.startDate,
+      'end_date': instance.endDate,
       'address': instance.address,
       'country': instance.country,
       'state': instance.state,
