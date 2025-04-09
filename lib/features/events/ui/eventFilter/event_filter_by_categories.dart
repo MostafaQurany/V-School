@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:v_school/core/theme/app_colors.dart';
-import 'package:v_school/features/events/ui/widgets/eventFilter/event_filter_section_title.dart';
+import 'package:v_school/features/events/ui/eventFilter/event_filter_section_title.dart';
 
 class EventFilterByCategories extends StatefulWidget {
   final List<String> categories;

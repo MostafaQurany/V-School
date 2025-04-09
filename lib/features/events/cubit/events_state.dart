@@ -7,4 +7,9 @@ class EventsState with _$EventsState {
   const factory EventsState.getEventsError(String message) = GetEventsError;
   const factory EventsState.getEventsSuccess(List<Event> events) =
       GetEventsSuccess;
+  const factory EventsState.getEventsFilterLoading() = GetEventsFilterLoading;
+  const factory EventsState.getEventsFilterError(String message) =
+      GetEventsFilterError;
+  const factory EventsState.getEventsFilterSuccess(List<Event> events) =
+      GetEventsFilterSuccess;
 }

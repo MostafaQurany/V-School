@@ -22,6 +22,9 @@ mixin _$EventsState {
     required TResult Function() getEventsLoading,
     required TResult Function(String message) getEventsError,
     required TResult Function(List<Event> events) getEventsSuccess,
+    required TResult Function() getEventsFilterLoading,
+    required TResult Function(String message) getEventsFilterError,
+    required TResult Function(List<Event> events) getEventsFilterSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +33,9 @@ mixin _$EventsState {
     TResult? Function()? getEventsLoading,
     TResult? Function(String message)? getEventsError,
     TResult? Function(List<Event> events)? getEventsSuccess,
+    TResult? Function()? getEventsFilterLoading,
+    TResult? Function(String message)? getEventsFilterError,
+    TResult? Function(List<Event> events)? getEventsFilterSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,6 +44,9 @@ mixin _$EventsState {
     TResult Function()? getEventsLoading,
     TResult Function(String message)? getEventsError,
     TResult Function(List<Event> events)? getEventsSuccess,
+    TResult Function()? getEventsFilterLoading,
+    TResult Function(String message)? getEventsFilterError,
+    TResult Function(List<Event> events)? getEventsFilterSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +56,11 @@ mixin _$EventsState {
     required TResult Function(GetEventsLoading value) getEventsLoading,
     required TResult Function(GetEventsError value) getEventsError,
     required TResult Function(GetEventsSuccess value) getEventsSuccess,
+    required TResult Function(GetEventsFilterLoading value)
+        getEventsFilterLoading,
+    required TResult Function(GetEventsFilterError value) getEventsFilterError,
+    required TResult Function(GetEventsFilterSuccess value)
+        getEventsFilterSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +69,9 @@ mixin _$EventsState {
     TResult? Function(GetEventsLoading value)? getEventsLoading,
     TResult? Function(GetEventsError value)? getEventsError,
     TResult? Function(GetEventsSuccess value)? getEventsSuccess,
+    TResult? Function(GetEventsFilterLoading value)? getEventsFilterLoading,
+    TResult? Function(GetEventsFilterError value)? getEventsFilterError,
+    TResult? Function(GetEventsFilterSuccess value)? getEventsFilterSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +80,9 @@ mixin _$EventsState {
     TResult Function(GetEventsLoading value)? getEventsLoading,
     TResult Function(GetEventsError value)? getEventsError,
     TResult Function(GetEventsSuccess value)? getEventsSuccess,
+    TResult Function(GetEventsFilterLoading value)? getEventsFilterLoading,
+    TResult Function(GetEventsFilterError value)? getEventsFilterError,
+    TResult Function(GetEventsFilterSuccess value)? getEventsFilterSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -134,6 +154,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function() getEventsLoading,
     required TResult Function(String message) getEventsError,
     required TResult Function(List<Event> events) getEventsSuccess,
+    required TResult Function() getEventsFilterLoading,
+    required TResult Function(String message) getEventsFilterError,
+    required TResult Function(List<Event> events) getEventsFilterSuccess,
   }) {
     return initial();
   }
@@ -145,6 +168,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? getEventsLoading,
     TResult? Function(String message)? getEventsError,
     TResult? Function(List<Event> events)? getEventsSuccess,
+    TResult? Function()? getEventsFilterLoading,
+    TResult? Function(String message)? getEventsFilterError,
+    TResult? Function(List<Event> events)? getEventsFilterSuccess,
   }) {
     return initial?.call();
   }
@@ -156,6 +182,9 @@ class _$InitialImpl implements _Initial {
     TResult Function()? getEventsLoading,
     TResult Function(String message)? getEventsError,
     TResult Function(List<Event> events)? getEventsSuccess,
+    TResult Function()? getEventsFilterLoading,
+    TResult Function(String message)? getEventsFilterError,
+    TResult Function(List<Event> events)? getEventsFilterSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -171,6 +200,11 @@ class _$InitialImpl implements _Initial {
     required TResult Function(GetEventsLoading value) getEventsLoading,
     required TResult Function(GetEventsError value) getEventsError,
     required TResult Function(GetEventsSuccess value) getEventsSuccess,
+    required TResult Function(GetEventsFilterLoading value)
+        getEventsFilterLoading,
+    required TResult Function(GetEventsFilterError value) getEventsFilterError,
+    required TResult Function(GetEventsFilterSuccess value)
+        getEventsFilterSuccess,
   }) {
     return initial(this);
   }
@@ -182,6 +216,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(GetEventsLoading value)? getEventsLoading,
     TResult? Function(GetEventsError value)? getEventsError,
     TResult? Function(GetEventsSuccess value)? getEventsSuccess,
+    TResult? Function(GetEventsFilterLoading value)? getEventsFilterLoading,
+    TResult? Function(GetEventsFilterError value)? getEventsFilterError,
+    TResult? Function(GetEventsFilterSuccess value)? getEventsFilterSuccess,
   }) {
     return initial?.call(this);
   }
@@ -193,6 +230,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(GetEventsLoading value)? getEventsLoading,
     TResult Function(GetEventsError value)? getEventsError,
     TResult Function(GetEventsSuccess value)? getEventsSuccess,
+    TResult Function(GetEventsFilterLoading value)? getEventsFilterLoading,
+    TResult Function(GetEventsFilterError value)? getEventsFilterError,
+    TResult Function(GetEventsFilterSuccess value)? getEventsFilterSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -251,6 +291,9 @@ class _$GetEventsLoadingImpl implements GetEventsLoading {
     required TResult Function() getEventsLoading,
     required TResult Function(String message) getEventsError,
     required TResult Function(List<Event> events) getEventsSuccess,
+    required TResult Function() getEventsFilterLoading,
+    required TResult Function(String message) getEventsFilterError,
+    required TResult Function(List<Event> events) getEventsFilterSuccess,
   }) {
     return getEventsLoading();
   }
@@ -262,6 +305,9 @@ class _$GetEventsLoadingImpl implements GetEventsLoading {
     TResult? Function()? getEventsLoading,
     TResult? Function(String message)? getEventsError,
     TResult? Function(List<Event> events)? getEventsSuccess,
+    TResult? Function()? getEventsFilterLoading,
+    TResult? Function(String message)? getEventsFilterError,
+    TResult? Function(List<Event> events)? getEventsFilterSuccess,
   }) {
     return getEventsLoading?.call();
   }
@@ -273,6 +319,9 @@ class _$GetEventsLoadingImpl implements GetEventsLoading {
     TResult Function()? getEventsLoading,
     TResult Function(String message)? getEventsError,
     TResult Function(List<Event> events)? getEventsSuccess,
+    TResult Function()? getEventsFilterLoading,
+    TResult Function(String message)? getEventsFilterError,
+    TResult Function(List<Event> events)? getEventsFilterSuccess,
     required TResult orElse(),
   }) {
     if (getEventsLoading != null) {
@@ -288,6 +337,11 @@ class _$GetEventsLoadingImpl implements GetEventsLoading {
     required TResult Function(GetEventsLoading value) getEventsLoading,
     required TResult Function(GetEventsError value) getEventsError,
     required TResult Function(GetEventsSuccess value) getEventsSuccess,
+    required TResult Function(GetEventsFilterLoading value)
+        getEventsFilterLoading,
+    required TResult Function(GetEventsFilterError value) getEventsFilterError,
+    required TResult Function(GetEventsFilterSuccess value)
+        getEventsFilterSuccess,
   }) {
     return getEventsLoading(this);
   }
@@ -299,6 +353,9 @@ class _$GetEventsLoadingImpl implements GetEventsLoading {
     TResult? Function(GetEventsLoading value)? getEventsLoading,
     TResult? Function(GetEventsError value)? getEventsError,
     TResult? Function(GetEventsSuccess value)? getEventsSuccess,
+    TResult? Function(GetEventsFilterLoading value)? getEventsFilterLoading,
+    TResult? Function(GetEventsFilterError value)? getEventsFilterError,
+    TResult? Function(GetEventsFilterSuccess value)? getEventsFilterSuccess,
   }) {
     return getEventsLoading?.call(this);
   }
@@ -310,6 +367,9 @@ class _$GetEventsLoadingImpl implements GetEventsLoading {
     TResult Function(GetEventsLoading value)? getEventsLoading,
     TResult Function(GetEventsError value)? getEventsError,
     TResult Function(GetEventsSuccess value)? getEventsSuccess,
+    TResult Function(GetEventsFilterLoading value)? getEventsFilterLoading,
+    TResult Function(GetEventsFilterError value)? getEventsFilterError,
+    TResult Function(GetEventsFilterSuccess value)? getEventsFilterSuccess,
     required TResult orElse(),
   }) {
     if (getEventsLoading != null) {
@@ -396,6 +456,9 @@ class _$GetEventsErrorImpl implements GetEventsError {
     required TResult Function() getEventsLoading,
     required TResult Function(String message) getEventsError,
     required TResult Function(List<Event> events) getEventsSuccess,
+    required TResult Function() getEventsFilterLoading,
+    required TResult Function(String message) getEventsFilterError,
+    required TResult Function(List<Event> events) getEventsFilterSuccess,
   }) {
     return getEventsError(message);
   }
@@ -407,6 +470,9 @@ class _$GetEventsErrorImpl implements GetEventsError {
     TResult? Function()? getEventsLoading,
     TResult? Function(String message)? getEventsError,
     TResult? Function(List<Event> events)? getEventsSuccess,
+    TResult? Function()? getEventsFilterLoading,
+    TResult? Function(String message)? getEventsFilterError,
+    TResult? Function(List<Event> events)? getEventsFilterSuccess,
   }) {
     return getEventsError?.call(message);
   }
@@ -418,6 +484,9 @@ class _$GetEventsErrorImpl implements GetEventsError {
     TResult Function()? getEventsLoading,
     TResult Function(String message)? getEventsError,
     TResult Function(List<Event> events)? getEventsSuccess,
+    TResult Function()? getEventsFilterLoading,
+    TResult Function(String message)? getEventsFilterError,
+    TResult Function(List<Event> events)? getEventsFilterSuccess,
     required TResult orElse(),
   }) {
     if (getEventsError != null) {
@@ -433,6 +502,11 @@ class _$GetEventsErrorImpl implements GetEventsError {
     required TResult Function(GetEventsLoading value) getEventsLoading,
     required TResult Function(GetEventsError value) getEventsError,
     required TResult Function(GetEventsSuccess value) getEventsSuccess,
+    required TResult Function(GetEventsFilterLoading value)
+        getEventsFilterLoading,
+    required TResult Function(GetEventsFilterError value) getEventsFilterError,
+    required TResult Function(GetEventsFilterSuccess value)
+        getEventsFilterSuccess,
   }) {
     return getEventsError(this);
   }
@@ -444,6 +518,9 @@ class _$GetEventsErrorImpl implements GetEventsError {
     TResult? Function(GetEventsLoading value)? getEventsLoading,
     TResult? Function(GetEventsError value)? getEventsError,
     TResult? Function(GetEventsSuccess value)? getEventsSuccess,
+    TResult? Function(GetEventsFilterLoading value)? getEventsFilterLoading,
+    TResult? Function(GetEventsFilterError value)? getEventsFilterError,
+    TResult? Function(GetEventsFilterSuccess value)? getEventsFilterSuccess,
   }) {
     return getEventsError?.call(this);
   }
@@ -455,6 +532,9 @@ class _$GetEventsErrorImpl implements GetEventsError {
     TResult Function(GetEventsLoading value)? getEventsLoading,
     TResult Function(GetEventsError value)? getEventsError,
     TResult Function(GetEventsSuccess value)? getEventsSuccess,
+    TResult Function(GetEventsFilterLoading value)? getEventsFilterLoading,
+    TResult Function(GetEventsFilterError value)? getEventsFilterError,
+    TResult Function(GetEventsFilterSuccess value)? getEventsFilterSuccess,
     required TResult orElse(),
   }) {
     if (getEventsError != null) {
@@ -555,6 +635,9 @@ class _$GetEventsSuccessImpl implements GetEventsSuccess {
     required TResult Function() getEventsLoading,
     required TResult Function(String message) getEventsError,
     required TResult Function(List<Event> events) getEventsSuccess,
+    required TResult Function() getEventsFilterLoading,
+    required TResult Function(String message) getEventsFilterError,
+    required TResult Function(List<Event> events) getEventsFilterSuccess,
   }) {
     return getEventsSuccess(events);
   }
@@ -566,6 +649,9 @@ class _$GetEventsSuccessImpl implements GetEventsSuccess {
     TResult? Function()? getEventsLoading,
     TResult? Function(String message)? getEventsError,
     TResult? Function(List<Event> events)? getEventsSuccess,
+    TResult? Function()? getEventsFilterLoading,
+    TResult? Function(String message)? getEventsFilterError,
+    TResult? Function(List<Event> events)? getEventsFilterSuccess,
   }) {
     return getEventsSuccess?.call(events);
   }
@@ -577,6 +663,9 @@ class _$GetEventsSuccessImpl implements GetEventsSuccess {
     TResult Function()? getEventsLoading,
     TResult Function(String message)? getEventsError,
     TResult Function(List<Event> events)? getEventsSuccess,
+    TResult Function()? getEventsFilterLoading,
+    TResult Function(String message)? getEventsFilterError,
+    TResult Function(List<Event> events)? getEventsFilterSuccess,
     required TResult orElse(),
   }) {
     if (getEventsSuccess != null) {
@@ -592,6 +681,11 @@ class _$GetEventsSuccessImpl implements GetEventsSuccess {
     required TResult Function(GetEventsLoading value) getEventsLoading,
     required TResult Function(GetEventsError value) getEventsError,
     required TResult Function(GetEventsSuccess value) getEventsSuccess,
+    required TResult Function(GetEventsFilterLoading value)
+        getEventsFilterLoading,
+    required TResult Function(GetEventsFilterError value) getEventsFilterError,
+    required TResult Function(GetEventsFilterSuccess value)
+        getEventsFilterSuccess,
   }) {
     return getEventsSuccess(this);
   }
@@ -603,6 +697,9 @@ class _$GetEventsSuccessImpl implements GetEventsSuccess {
     TResult? Function(GetEventsLoading value)? getEventsLoading,
     TResult? Function(GetEventsError value)? getEventsError,
     TResult? Function(GetEventsSuccess value)? getEventsSuccess,
+    TResult? Function(GetEventsFilterLoading value)? getEventsFilterLoading,
+    TResult? Function(GetEventsFilterError value)? getEventsFilterError,
+    TResult? Function(GetEventsFilterSuccess value)? getEventsFilterSuccess,
   }) {
     return getEventsSuccess?.call(this);
   }
@@ -614,6 +711,9 @@ class _$GetEventsSuccessImpl implements GetEventsSuccess {
     TResult Function(GetEventsLoading value)? getEventsLoading,
     TResult Function(GetEventsError value)? getEventsError,
     TResult Function(GetEventsSuccess value)? getEventsSuccess,
+    TResult Function(GetEventsFilterLoading value)? getEventsFilterLoading,
+    TResult Function(GetEventsFilterError value)? getEventsFilterError,
+    TResult Function(GetEventsFilterSuccess value)? getEventsFilterSuccess,
     required TResult orElse(),
   }) {
     if (getEventsSuccess != null) {
@@ -634,4 +734,502 @@ abstract class GetEventsSuccess implements EventsState {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$GetEventsSuccessImplCopyWith<_$GetEventsSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetEventsFilterLoadingImplCopyWith<$Res> {
+  factory _$$GetEventsFilterLoadingImplCopyWith(
+          _$GetEventsFilterLoadingImpl value,
+          $Res Function(_$GetEventsFilterLoadingImpl) then) =
+      __$$GetEventsFilterLoadingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetEventsFilterLoadingImplCopyWithImpl<$Res>
+    extends _$EventsStateCopyWithImpl<$Res, _$GetEventsFilterLoadingImpl>
+    implements _$$GetEventsFilterLoadingImplCopyWith<$Res> {
+  __$$GetEventsFilterLoadingImplCopyWithImpl(
+      _$GetEventsFilterLoadingImpl _value,
+      $Res Function(_$GetEventsFilterLoadingImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of EventsState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$GetEventsFilterLoadingImpl implements GetEventsFilterLoading {
+  const _$GetEventsFilterLoadingImpl();
+
+  @override
+  String toString() {
+    return 'EventsState.getEventsFilterLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetEventsFilterLoadingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getEventsLoading,
+    required TResult Function(String message) getEventsError,
+    required TResult Function(List<Event> events) getEventsSuccess,
+    required TResult Function() getEventsFilterLoading,
+    required TResult Function(String message) getEventsFilterError,
+    required TResult Function(List<Event> events) getEventsFilterSuccess,
+  }) {
+    return getEventsFilterLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getEventsLoading,
+    TResult? Function(String message)? getEventsError,
+    TResult? Function(List<Event> events)? getEventsSuccess,
+    TResult? Function()? getEventsFilterLoading,
+    TResult? Function(String message)? getEventsFilterError,
+    TResult? Function(List<Event> events)? getEventsFilterSuccess,
+  }) {
+    return getEventsFilterLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getEventsLoading,
+    TResult Function(String message)? getEventsError,
+    TResult Function(List<Event> events)? getEventsSuccess,
+    TResult Function()? getEventsFilterLoading,
+    TResult Function(String message)? getEventsFilterError,
+    TResult Function(List<Event> events)? getEventsFilterSuccess,
+    required TResult orElse(),
+  }) {
+    if (getEventsFilterLoading != null) {
+      return getEventsFilterLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetEventsLoading value) getEventsLoading,
+    required TResult Function(GetEventsError value) getEventsError,
+    required TResult Function(GetEventsSuccess value) getEventsSuccess,
+    required TResult Function(GetEventsFilterLoading value)
+        getEventsFilterLoading,
+    required TResult Function(GetEventsFilterError value) getEventsFilterError,
+    required TResult Function(GetEventsFilterSuccess value)
+        getEventsFilterSuccess,
+  }) {
+    return getEventsFilterLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetEventsLoading value)? getEventsLoading,
+    TResult? Function(GetEventsError value)? getEventsError,
+    TResult? Function(GetEventsSuccess value)? getEventsSuccess,
+    TResult? Function(GetEventsFilterLoading value)? getEventsFilterLoading,
+    TResult? Function(GetEventsFilterError value)? getEventsFilterError,
+    TResult? Function(GetEventsFilterSuccess value)? getEventsFilterSuccess,
+  }) {
+    return getEventsFilterLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetEventsLoading value)? getEventsLoading,
+    TResult Function(GetEventsError value)? getEventsError,
+    TResult Function(GetEventsSuccess value)? getEventsSuccess,
+    TResult Function(GetEventsFilterLoading value)? getEventsFilterLoading,
+    TResult Function(GetEventsFilterError value)? getEventsFilterError,
+    TResult Function(GetEventsFilterSuccess value)? getEventsFilterSuccess,
+    required TResult orElse(),
+  }) {
+    if (getEventsFilterLoading != null) {
+      return getEventsFilterLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetEventsFilterLoading implements EventsState {
+  const factory GetEventsFilterLoading() = _$GetEventsFilterLoadingImpl;
+}
+
+/// @nodoc
+abstract class _$$GetEventsFilterErrorImplCopyWith<$Res> {
+  factory _$$GetEventsFilterErrorImplCopyWith(_$GetEventsFilterErrorImpl value,
+          $Res Function(_$GetEventsFilterErrorImpl) then) =
+      __$$GetEventsFilterErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$GetEventsFilterErrorImplCopyWithImpl<$Res>
+    extends _$EventsStateCopyWithImpl<$Res, _$GetEventsFilterErrorImpl>
+    implements _$$GetEventsFilterErrorImplCopyWith<$Res> {
+  __$$GetEventsFilterErrorImplCopyWithImpl(_$GetEventsFilterErrorImpl _value,
+      $Res Function(_$GetEventsFilterErrorImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of EventsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$GetEventsFilterErrorImpl(
+      null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetEventsFilterErrorImpl implements GetEventsFilterError {
+  const _$GetEventsFilterErrorImpl(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'EventsState.getEventsFilterError(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetEventsFilterErrorImpl &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  /// Create a copy of EventsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetEventsFilterErrorImplCopyWith<_$GetEventsFilterErrorImpl>
+      get copyWith =>
+          __$$GetEventsFilterErrorImplCopyWithImpl<_$GetEventsFilterErrorImpl>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getEventsLoading,
+    required TResult Function(String message) getEventsError,
+    required TResult Function(List<Event> events) getEventsSuccess,
+    required TResult Function() getEventsFilterLoading,
+    required TResult Function(String message) getEventsFilterError,
+    required TResult Function(List<Event> events) getEventsFilterSuccess,
+  }) {
+    return getEventsFilterError(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getEventsLoading,
+    TResult? Function(String message)? getEventsError,
+    TResult? Function(List<Event> events)? getEventsSuccess,
+    TResult? Function()? getEventsFilterLoading,
+    TResult? Function(String message)? getEventsFilterError,
+    TResult? Function(List<Event> events)? getEventsFilterSuccess,
+  }) {
+    return getEventsFilterError?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getEventsLoading,
+    TResult Function(String message)? getEventsError,
+    TResult Function(List<Event> events)? getEventsSuccess,
+    TResult Function()? getEventsFilterLoading,
+    TResult Function(String message)? getEventsFilterError,
+    TResult Function(List<Event> events)? getEventsFilterSuccess,
+    required TResult orElse(),
+  }) {
+    if (getEventsFilterError != null) {
+      return getEventsFilterError(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetEventsLoading value) getEventsLoading,
+    required TResult Function(GetEventsError value) getEventsError,
+    required TResult Function(GetEventsSuccess value) getEventsSuccess,
+    required TResult Function(GetEventsFilterLoading value)
+        getEventsFilterLoading,
+    required TResult Function(GetEventsFilterError value) getEventsFilterError,
+    required TResult Function(GetEventsFilterSuccess value)
+        getEventsFilterSuccess,
+  }) {
+    return getEventsFilterError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetEventsLoading value)? getEventsLoading,
+    TResult? Function(GetEventsError value)? getEventsError,
+    TResult? Function(GetEventsSuccess value)? getEventsSuccess,
+    TResult? Function(GetEventsFilterLoading value)? getEventsFilterLoading,
+    TResult? Function(GetEventsFilterError value)? getEventsFilterError,
+    TResult? Function(GetEventsFilterSuccess value)? getEventsFilterSuccess,
+  }) {
+    return getEventsFilterError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetEventsLoading value)? getEventsLoading,
+    TResult Function(GetEventsError value)? getEventsError,
+    TResult Function(GetEventsSuccess value)? getEventsSuccess,
+    TResult Function(GetEventsFilterLoading value)? getEventsFilterLoading,
+    TResult Function(GetEventsFilterError value)? getEventsFilterError,
+    TResult Function(GetEventsFilterSuccess value)? getEventsFilterSuccess,
+    required TResult orElse(),
+  }) {
+    if (getEventsFilterError != null) {
+      return getEventsFilterError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetEventsFilterError implements EventsState {
+  const factory GetEventsFilterError(final String message) =
+      _$GetEventsFilterErrorImpl;
+
+  String get message;
+
+  /// Create a copy of EventsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetEventsFilterErrorImplCopyWith<_$GetEventsFilterErrorImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetEventsFilterSuccessImplCopyWith<$Res> {
+  factory _$$GetEventsFilterSuccessImplCopyWith(
+          _$GetEventsFilterSuccessImpl value,
+          $Res Function(_$GetEventsFilterSuccessImpl) then) =
+      __$$GetEventsFilterSuccessImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<Event> events});
+}
+
+/// @nodoc
+class __$$GetEventsFilterSuccessImplCopyWithImpl<$Res>
+    extends _$EventsStateCopyWithImpl<$Res, _$GetEventsFilterSuccessImpl>
+    implements _$$GetEventsFilterSuccessImplCopyWith<$Res> {
+  __$$GetEventsFilterSuccessImplCopyWithImpl(
+      _$GetEventsFilterSuccessImpl _value,
+      $Res Function(_$GetEventsFilterSuccessImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of EventsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? events = null,
+  }) {
+    return _then(_$GetEventsFilterSuccessImpl(
+      null == events
+          ? _value._events
+          : events // ignore: cast_nullable_to_non_nullable
+              as List<Event>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetEventsFilterSuccessImpl implements GetEventsFilterSuccess {
+  const _$GetEventsFilterSuccessImpl(final List<Event> events)
+      : _events = events;
+
+  final List<Event> _events;
+  @override
+  List<Event> get events {
+    if (_events is EqualUnmodifiableListView) return _events;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_events);
+  }
+
+  @override
+  String toString() {
+    return 'EventsState.getEventsFilterSuccess(events: $events)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetEventsFilterSuccessImpl &&
+            const DeepCollectionEquality().equals(other._events, _events));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_events));
+
+  /// Create a copy of EventsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetEventsFilterSuccessImplCopyWith<_$GetEventsFilterSuccessImpl>
+      get copyWith => __$$GetEventsFilterSuccessImplCopyWithImpl<
+          _$GetEventsFilterSuccessImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getEventsLoading,
+    required TResult Function(String message) getEventsError,
+    required TResult Function(List<Event> events) getEventsSuccess,
+    required TResult Function() getEventsFilterLoading,
+    required TResult Function(String message) getEventsFilterError,
+    required TResult Function(List<Event> events) getEventsFilterSuccess,
+  }) {
+    return getEventsFilterSuccess(events);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getEventsLoading,
+    TResult? Function(String message)? getEventsError,
+    TResult? Function(List<Event> events)? getEventsSuccess,
+    TResult? Function()? getEventsFilterLoading,
+    TResult? Function(String message)? getEventsFilterError,
+    TResult? Function(List<Event> events)? getEventsFilterSuccess,
+  }) {
+    return getEventsFilterSuccess?.call(events);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getEventsLoading,
+    TResult Function(String message)? getEventsError,
+    TResult Function(List<Event> events)? getEventsSuccess,
+    TResult Function()? getEventsFilterLoading,
+    TResult Function(String message)? getEventsFilterError,
+    TResult Function(List<Event> events)? getEventsFilterSuccess,
+    required TResult orElse(),
+  }) {
+    if (getEventsFilterSuccess != null) {
+      return getEventsFilterSuccess(events);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(GetEventsLoading value) getEventsLoading,
+    required TResult Function(GetEventsError value) getEventsError,
+    required TResult Function(GetEventsSuccess value) getEventsSuccess,
+    required TResult Function(GetEventsFilterLoading value)
+        getEventsFilterLoading,
+    required TResult Function(GetEventsFilterError value) getEventsFilterError,
+    required TResult Function(GetEventsFilterSuccess value)
+        getEventsFilterSuccess,
+  }) {
+    return getEventsFilterSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(GetEventsLoading value)? getEventsLoading,
+    TResult? Function(GetEventsError value)? getEventsError,
+    TResult? Function(GetEventsSuccess value)? getEventsSuccess,
+    TResult? Function(GetEventsFilterLoading value)? getEventsFilterLoading,
+    TResult? Function(GetEventsFilterError value)? getEventsFilterError,
+    TResult? Function(GetEventsFilterSuccess value)? getEventsFilterSuccess,
+  }) {
+    return getEventsFilterSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(GetEventsLoading value)? getEventsLoading,
+    TResult Function(GetEventsError value)? getEventsError,
+    TResult Function(GetEventsSuccess value)? getEventsSuccess,
+    TResult Function(GetEventsFilterLoading value)? getEventsFilterLoading,
+    TResult Function(GetEventsFilterError value)? getEventsFilterError,
+    TResult Function(GetEventsFilterSuccess value)? getEventsFilterSuccess,
+    required TResult orElse(),
+  }) {
+    if (getEventsFilterSuccess != null) {
+      return getEventsFilterSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetEventsFilterSuccess implements EventsState {
+  const factory GetEventsFilterSuccess(final List<Event> events) =
+      _$GetEventsFilterSuccessImpl;
+
+  List<Event> get events;
+
+  /// Create a copy of EventsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetEventsFilterSuccessImplCopyWith<_$GetEventsFilterSuccessImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

@@ -5,6 +5,7 @@ import 'package:v_school/features/authentication/data/model/forget_password_requ
 import 'package:v_school/features/authentication/data/model/forget_password_response.dart';
 import 'package:v_school/features/authentication/data/model/login_request.dart';
 import 'package:v_school/features/authentication/data/model/login_response.dart';
+import 'package:v_school/features/events/data/models/event_filter_request.dart';
 import 'package:v_school/features/events/data/models/get_event_response.dart';
 
 part 'api_service.g.dart';
@@ -24,7 +25,13 @@ abstract class ApiService {
     @Body() ForgetPasswordRequest request,
   );
 
-  // Events get , attend ,attended
+  // Events get
   @GET(ApiConstants.getEvents)
   Future<GetEventResponse> getEvents();
+
+  // Events Filtered
+  @GET(ApiConstants.getEvents)
+  Future<GetEventResponse> getFilteredEvents({
+    @Queries() EventFilterRequest? filter,
+  });
 }

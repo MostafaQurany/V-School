@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:v_school/core/theme/app_colors.dart';
 import 'package:v_school/core/utils/app_assets.dart';
-import 'package:v_school/features/events/ui/widgets/eventFilter/event_filter_section_title.dart';
+import 'package:v_school/features/events/ui/eventFilter/event_filter_section_title.dart';
 
 class EventFilterByDate extends StatefulWidget {
   const EventFilterByDate({super.key});

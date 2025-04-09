@@ -8,8 +8,8 @@ import 'package:v_school/features/authentication/ui/login_screen.dart';
 import 'package:v_school/features/authentication/ui/splash_screen.dart';
 import 'package:v_school/features/events/cubit/events_cubit.dart';
 import 'package:v_school/features/events/data/models/get_event_response.dart';
+import 'package:v_school/features/events/ui/eventFilter/event_filter_screen.dart';
 import 'package:v_school/features/events/ui/event_details_screen.dart';
-import 'package:v_school/features/events/ui/widgets/eventFilter/event_filter_screen.dart';
 import 'package:v_school/features/events/ui/events_list_screen.dart';
 import 'package:v_school/features/home/ui/home_screen.dart';
 
