@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:v_school/core/utils/app_constants.dart';
 import 'package:v_school/features/events/ui/home_screen_events.dart';
-import 'package:v_school/features/home/ui/widget/announcement/home_screen_announcement.dart';
+import 'package:v_school/features/announcement/ui/home_screen_announcement.dart';
 import 'package:v_school/features/home/ui/widget/categories/home_screen_category.dart';
 
 class HomeScreen extends StatelessWidget {

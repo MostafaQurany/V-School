@@ -53,6 +53,7 @@ class AuthInterceptor extends Interceptor {
 
     print("Stored Token: $token"); // Debugging
 
+    
     if (token != null && token.isNotEmpty) {
       options.headers['Authorization'] = 'Bearer $token';
     }

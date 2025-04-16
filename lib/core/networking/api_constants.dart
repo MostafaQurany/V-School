@@ -5,4 +5,7 @@ class ApiConstants {
   static const String forgetPassword = "password/forgot";
 
   static const String getEvents = "events";
+  static const String getAnnouncements = "announcements";
+
+
 }

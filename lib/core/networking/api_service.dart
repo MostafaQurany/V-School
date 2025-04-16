@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:v_school/core/networking/api_constants.dart';
+import 'package:v_school/features/announcement/data/get_announcements_response.dart';
 import 'package:v_school/features/authentication/data/model/forget_password_request.dart';
 import 'package:v_school/features/authentication/data/model/forget_password_response.dart';
 import 'package:v_school/features/authentication/data/model/login_request.dart';
@@ -34,4 +35,8 @@ abstract class ApiService {
   Future<GetEventResponse> getFilteredEvents({
     @Queries() EventFilterRequest? filter,
   });
+
+  // * get Announcements
+  @GET(ApiConstants.getAnnouncements)
+  Future<GetAnnouncementsResponse> getAnnouncements();
 }
