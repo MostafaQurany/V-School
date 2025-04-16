@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:v_school/core/theme/app_colors.dart';
+import 'package:v_school/features/announcement/data/announcement.dart';
 
 class AnnouncementItem extends StatelessWidget {
-  const AnnouncementItem({Key? key}) : super(key: key);
+  final Announcement announcement;
+  const AnnouncementItem({super.key, required this.announcement});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class AnnouncementItem extends StatelessWidget {
           Expanded(
             flex: 8,
             child: Text(
-              "تم فتح باب التقديمات بروضة مدرستنا للسنة الدراسية الجديدة ٢٠٢٥/٢٠٢٦",
+              announcement.description,
               style: Theme.of(context).textTheme.headlineMedium,
               textDirection: TextDirection.rtl,
               maxLines: 3,
@@ -37,7 +39,7 @@ class AnnouncementItem extends StatelessWidget {
           Expanded(
             flex: 2,
             child: Text(
-              "Today 9:52 AM",
+              announcement.createdAt ?? "Soon",
               style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                     color: AppColors.secondary,
                   ),

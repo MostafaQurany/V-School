@@ -8,7 +8,7 @@ part 'events_cubit.freezed.dart';
 part 'events_state.dart';
 
 class EventsCubit extends Cubit<EventsState> {
-  EventsRepo _eventsRepo;
+  final EventsRepo _eventsRepo;
   EventsCubit(this._eventsRepo) : super(const EventsState.initial());
 
   List<Event> events = []; // Full list of loaded events
@@ -17,20 +17,21 @@ class EventsCubit extends Cubit<EventsState> {
   Future<void> fetchEvents() async {
     if (events.isNotEmpty) {
       emit(EventsState.getEventsSuccess(events));
-    }
-    emit(EventsState.getEventsLoading());
+    } else {
+      emit(EventsState.getEventsLoading());
 
-    final res = await _eventsRepo.getEvents();
-    res.when(
-      success: (data) {
-        events = data.events ?? [];
-        _filteredEvents = events; // set default
-        emit(EventsState.getEventsSuccess(_filteredEvents));
-      },
-      error: (message) {
-        emit(EventsState.getEventsError(message));
-      },
-    );
+      final res = await _eventsRepo.getEvents();
+      res.when(
+        success: (data) {
+          events = data.events ?? [];
+          _filteredEvents = events; // set default
+          emit(EventsState.getEventsSuccess(_filteredEvents));
+        },
+        error: (message) {
+          emit(EventsState.getEventsError(message));
+        },
+      );
+    }
   }
 
   void searchEventsLocally(String query) {

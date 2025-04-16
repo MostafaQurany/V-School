@@ -2,6 +2,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:v_school/core/di/dependency_injection.dart';
 import 'package:v_school/core/route/Routes.dart';
+import 'package:v_school/features/announcement/cubit/announcement_cubit.dart';
+import 'package:v_school/features/announcement/ui/announcement_list_screen.dart';
 import 'package:v_school/features/authentication/cubit/login_cubit.dart';
 import 'package:v_school/features/authentication/ui/forgot_password.dart';
 import 'package:v_school/features/authentication/ui/login_screen.dart';
@@ -42,9 +44,17 @@ class AppRouter {
       ),
       ShellRoute(
         builder: (context, state, child) {
-          return BlocProvider(
-            create: (context) => EventsCubit(getIt())..fetchEvents(),
-            child: child, // Wraps all child screens
+          return MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => EventsCubit(getIt())..fetchEvents(),
+                // Wraps all child screens
+              ),
+              BlocProvider(
+                create: (context) => AnnouncementCubit(getIt())..getAnnouncements(),
+              ),
+            ],
+            child: child,
           );
         },
         routes: [
@@ -52,30 +62,37 @@ class AppRouter {
             path: Routes.homeScreen,
             name: Routes.homeScreenName,
             builder: (context, state) => HomeScreen(),
+            routes: [
+              GoRoute(
+                  path: Routes.eventsListScreen,
+                  name: Routes.eventsListScreenName,
+                  builder: (context, state) => EventsListScreen(),
+                  routes: [
+                    GoRoute(
+                      path: Routes.eventDetailsScreen,
+                      name: Routes.eventDetailsScreenName,
+                      builder: (context, state) {
+                        final event = GoRouterState.of(context).extra as Event;
+                        return EventDetailsScreen(
+                          event: event,
+                        );
+                      },
+                    ),
+                    GoRoute(
+                      path: Routes.eventFilterScreen,
+                      name: Routes.eventFilterScreenName,
+                      builder: (context, state) {
+                        return EventsFilterScreen();
+                      },
+                    ),
+                  ]),
+              GoRoute(
+                path: "/${Routes.announcementsScreen}",
+                name: Routes.announcementsScreen,
+                builder: (context, state) => AnnouncementListScreen(),
+              ),
+            ],
           ),
-          GoRoute(
-              path: Routes.eventsListScreen,
-              name: Routes.eventsListScreenName,
-              builder: (context, state) => EventsListScreen(),
-              routes: [
-                GoRoute(
-                  path: Routes.eventDetailsScreen,
-                  name: Routes.eventDetailsScreenName,
-                  builder: (context, state) {
-                    final event = GoRouterState.of(context).extra as Event;
-                    return EventDetailsScreen(
-                      event: event,
-                    );
-                  },
-                ),
-                GoRoute(
-                  path: Routes.eventFilterScreen,
-                  name: Routes.eventFilterScreenName,
-                  builder: (context, state) {
-                    return EventsFilterScreen();
-                  },
-                ),
-              ]),
         ],
       ),
     ],

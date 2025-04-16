@@ -6,10 +6,11 @@ import 'package:go_router/go_router.dart';
 import 'package:v_school/core/route/Routes.dart';
 import 'package:v_school/core/theme/app_colors.dart';
 import 'package:v_school/core/utils/app_assets.dart';
+import 'package:v_school/features/announcement/cubit/announcement_cubit.dart';
 import 'package:v_school/features/events/cubit/events_cubit.dart';
 
-class EventsListSearchBarFilter extends StatelessWidget {
-  const EventsListSearchBarFilter({super.key});
+class AnnouncementListSearchBarFilter extends StatelessWidget {
+  const AnnouncementListSearchBarFilter({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,9 @@ class EventsListSearchBarFilter extends StatelessWidget {
           Expanded(
             child: TextFormField(
               onChanged: (value) {
-                context.read<EventsCubit>().searchEventsLocally(value);
+                context
+                    .read<AnnouncementCubit>()
+                    .searchAnnouncementsLocally(value);
               },
               decoration: InputDecoration(
                 prefixIcon: Padding(
@@ -51,7 +54,7 @@ class EventsListSearchBarFilter extends StatelessWidget {
           ),
           IconButton(
             onPressed: () {
-              context.pushNamed(Routes.eventFilterScreenName);
+              //  context.pushNamed(Routes.eventFilterScreenName);
             },
             icon: SvgPicture.asset(
               AppAssets.filterIconSvg,

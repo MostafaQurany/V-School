@@ -2,46 +2,46 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:v_school/core/utils/app_constants.dart';
-import 'package:v_school/features/events/cubit/events_cubit.dart';
-import 'package:v_school/features/events/ui/widgets/event_item.dart';
-import 'package:v_school/features/events/ui/widgets/events_list_search_bar_filter.dart';
+import 'package:v_school/features/announcement/cubit/announcement_cubit.dart';
+import 'package:v_school/features/announcement/ui/widgets/announcement_item.dart';
+import 'package:v_school/features/announcement/ui/widgets/announcement_list_search_bar_filter.dart';
 
-class EventsListScreen extends StatelessWidget {
-  const EventsListScreen({super.key});
+class AnnouncementListScreen extends StatelessWidget {
+  const AnnouncementListScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Events"),
+        title: Text("Announcement"),
       ),
-      body: BlocConsumer<EventsCubit, EventsState>(
+      body: BlocConsumer<AnnouncementCubit, AnnouncementState>(
         listenWhen: (previous, current) =>
-            current is GetEventsLoading ||
-            current is GetEventsSuccess ||
-            current is GetEventsError,
+            current is GetAnnouncementLoading ||
+            current is GetAnnouncementSuccess ||
+            current is GetAnnouncementError,
         listener: (context, state) {},
         buildWhen: (previous, current) =>
-            current is GetEventsLoading ||
-            current is GetEventsSuccess ||
-            current is GetEventsError,
+            current is GetAnnouncementLoading ||
+            current is GetAnnouncementSuccess ||
+            current is GetAnnouncementError,
         builder: (context, state) {
           return state.maybeWhen(
-            getEventsSuccess: (events) {
+            getAnnouncementSuccess: (announcementList) {
               return Padding(
                 padding: AppConstants.screenPadding,
                 child: Column(
                   children: [
-                    EventsListSearchBarFilter(),
+                    AnnouncementListSearchBarFilter(),
                     Expanded(
                       child: ListView.builder(
-                        itemCount: events.length,
+                        itemCount: announcementList.length,
                         physics: BouncingScrollPhysics(),
                         itemBuilder: (context, index) {
                           return Padding(
                             padding: EdgeInsets.only(bottom: 12.h),
-                            child: EventItem(
-                              event: events[index],
+                            child: AnnouncementItem(
+                              announcement: announcementList[index],
                             ),
                           );
                         },
@@ -51,12 +51,12 @@ class EventsListScreen extends StatelessWidget {
                 ),
               );
             },
-            getEventsLoading: () {
+            getAnnouncementLoading: () {
               return Center(
                 child: CircularProgressIndicator(),
               );
             },
-            getEventsError: (message) {
+            getAnnouncementError: (message) {
               return Center(
                 child: Column(
                   children: [
@@ -64,7 +64,7 @@ class EventsListScreen extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         // Retry button action
-                        context.read<EventsCubit>().fetchEvents();
+                        context.read<AnnouncementCubit>().getAnnouncements();
                       },
                       child: Text("Retry"),
                     ),
