@@ -17,7 +17,10 @@ class VSchool extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: AppTheme.lightTheme,
-        routerConfig: AppRouter.goRouterGenerator(),
+        //routerConfig: AppRouter().router,
+        routerDelegate: AppRouter().router.routerDelegate,
+        routeInformationProvider: AppRouter().router.routeInformationProvider,
+        routeInformationParser: AppRouter().router.routeInformationParser,
       ),
     );
   }

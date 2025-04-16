@@ -32,7 +32,13 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         onPressed: onTap,
-        child: Text(text),
+        child: Text(
+          text,
+          style: Theme.of(context)
+              .textTheme
+              .bodyMedium!
+              .copyWith(color: AppColors.white),
+        ),
       ),
     );
   }

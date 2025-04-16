@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:v_school/core/di/dependency_injection.dart';
@@ -6,31 +5,79 @@ import 'package:v_school/core/route/Routes.dart';
 import 'package:v_school/features/authentication/cubit/login_cubit.dart';
 import 'package:v_school/features/authentication/ui/forgot_password.dart';
 import 'package:v_school/features/authentication/ui/login_screen.dart';
+import 'package:v_school/features/authentication/ui/splash_screen.dart';
+import 'package:v_school/features/events/cubit/events_cubit.dart';
+import 'package:v_school/features/events/data/models/get_event_response.dart';
+import 'package:v_school/features/events/ui/eventFilter/event_filter_screen.dart';
+import 'package:v_school/features/events/ui/event_details_screen.dart';
+import 'package:v_school/features/events/ui/events_list_screen.dart';
+import 'package:v_school/features/home/ui/home_screen.dart';
 
 class AppRouter {
-  static GoRouter goRouterGenerator() => GoRouter(
-        initialLocation: "/",
+  GoRouter get router => _router;
+
+  static final GoRouter _router = GoRouter(
+    initialLocation: Routes.splashScreen,
+    routes: [
+      GoRoute(
+        path: Routes.splashScreen,
+        name: Routes.splashScreenName,
+        builder: (context, state) => SplashScreen(),
+      ),
+      GoRoute(
+        path: Routes.loginScreen,
+        name: Routes.loginScreenName,
+        builder: (context, state) => BlocProvider(
+          create: (context) => LoginCubit(getIt()),
+          child: LoginScreen(),
+        ),
+      ),
+      GoRoute(
+        path: Routes.forgotPassword,
+        name: Routes.forgotPasswordName,
+        builder: (context, state) => BlocProvider(
+          create: (context) => LoginCubit(getIt()),
+          child: ForgotPassword(),
+        ),
+      ),
+      ShellRoute(
+        builder: (context, state, child) {
+          return BlocProvider(
+            create: (context) => EventsCubit(getIt())..fetchEvents(),
+            child: child, // Wraps all child screens
+          );
+        },
         routes: [
           GoRoute(
-            path: "/",
-            builder: (context, state) => BlocProvider(
-              create: (context) => LoginCubit(getIt()),
-              child: LoginScreen(),
-            ),
-          ),
-          GoRoute(
-            path: Routes.forgotPassword,
-            builder: (context, state) => BlocProvider(
-              create: (context) => LoginCubit(getIt()),
-              child: ForgotPassword(),
-            ),
-          ),
-          GoRoute(
             path: Routes.homeScreen,
-            builder: (context, state) => Scaffold(
-              body: Center(child: Text("Home Screen")),
-            ),
+            name: Routes.homeScreenName,
+            builder: (context, state) => HomeScreen(),
           ),
+          GoRoute(
+              path: Routes.eventsListScreen,
+              name: Routes.eventsListScreenName,
+              builder: (context, state) => EventsListScreen(),
+              routes: [
+                GoRoute(
+                  path: Routes.eventDetailsScreen,
+                  name: Routes.eventDetailsScreenName,
+                  builder: (context, state) {
+                    final event = GoRouterState.of(context).extra as Event;
+                    return EventDetailsScreen(
+                      event: event,
+                    );
+                  },
+                ),
+                GoRoute(
+                  path: Routes.eventFilterScreen,
+                  name: Routes.eventFilterScreenName,
+                  builder: (context, state) {
+                    return EventsFilterScreen();
+                  },
+                ),
+              ]),
         ],
-      );
+      ),
+    ],
+  );
 }

@@ -31,7 +31,12 @@ dependencies:
   get_it: ^8.0.3
   # secure the token and cache it
   flutter_secure_storage: ^9.2.4
-
+  # images and pikers
+  flutter_svg: ^2.0.17
+  # ui helpers
+  enhance_stepper: ^1.0.1
+  #library to load and cache network images.
+  cached_network_image: ^3.4.1
 
 dev_dependencies:
   flutter_test:
@@ -48,6 +53,7 @@ flutter:
   assets:
     - assets/image/
     - assets/icons/
+    - assets/svgs/
 
 
   fonts:
