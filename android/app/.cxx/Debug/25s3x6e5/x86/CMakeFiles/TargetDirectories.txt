@@ -1,0 +1,2 @@
+C:/Users/qmost/production projects/v_school/android/app/.cxx/Debug/25s3x6e5/x86/CMakeFiles/edit_cache.dir
+C:/Users/qmost/production projects/v_school/android/app/.cxx/Debug/25s3x6e5/x86/CMakeFiles/rebuild_cache.dir

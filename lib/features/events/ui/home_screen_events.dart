@@ -6,7 +6,7 @@ import 'package:v_school/features/events/ui/widgets/home_screen_events_builder.d
 import 'package:v_school/features/home/ui/widget/title_view_all_widget.dart';
 
 class HomeScreenEvents extends StatelessWidget {
-  const HomeScreenEvents({Key? key}) : super(key: key);
+  const HomeScreenEvents({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class HomeScreenEvents extends StatelessWidget {
         return state.maybeWhen(
           getEventsError: (error) {
             return Text(
-              'An error occurred: ${error}',
+              'An error occurred: $error',
               style: TextStyle(color: Colors.red),
             );
           },

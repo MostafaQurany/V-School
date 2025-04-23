@@ -4,8 +4,7 @@ import 'package:v_school/features/authentication/cubit/login_cubit.dart';
 
 class ForgetPasswordStateWidget extends StatelessWidget {
   final Widget child;
-  const ForgetPasswordStateWidget({Key? key, required this.child})
-      : super(key: key);
+  const ForgetPasswordStateWidget({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {

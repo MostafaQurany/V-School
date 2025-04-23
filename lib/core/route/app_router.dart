@@ -4,6 +4,7 @@ import 'package:v_school/core/di/dependency_injection.dart';
 import 'package:v_school/core/route/Routes.dart';
 import 'package:v_school/features/announcement/cubit/announcement_cubit.dart';
 import 'package:v_school/features/announcement/ui/announcement_list_screen.dart';
+import 'package:v_school/features/attendance/ui/attendance_screen.dart';
 import 'package:v_school/features/authentication/cubit/login_cubit.dart';
 import 'package:v_school/features/authentication/ui/forgot_password.dart';
 import 'package:v_school/features/authentication/ui/login_screen.dart';
@@ -51,7 +52,8 @@ class AppRouter {
                 // Wraps all child screens
               ),
               BlocProvider(
-                create: (context) => AnnouncementCubit(getIt())..getAnnouncements(),
+                create: (context) =>
+                    AnnouncementCubit(getIt())..getAnnouncements(),
               ),
             ],
             child: child,
@@ -90,6 +92,11 @@ class AppRouter {
                 path: "/${Routes.announcementsScreen}",
                 name: Routes.announcementsScreen,
                 builder: (context, state) => AnnouncementListScreen(),
+              ),
+              GoRoute(
+                path: "/${Routes.attendanceScreen}",
+                name: Routes.attendanceScreen,
+                builder: (context, state) => AttendanceScreen(),
               ),
             ],
           ),

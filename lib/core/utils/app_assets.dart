@@ -10,12 +10,13 @@ class AppAssets {
       _iconPath('parents_button_icon_login_screen.png');
   static String teacherButtonIconLoginScreen =
       _iconPath('teacher_button_icon_login_screen.png');
+  // icon
+  static String attendanceIcon = _iconPath("assignment_icon.png");
 
   // svg
 
   static String locationIconSvg = _svgPath("location_icon.svg");
   static String calenderIconSvg = _svgPath("calender_icon.svg");
-  static String attendanceIconSvg = _svgPath("attendance_icon.svg");
   static String assignmentIconSvg = _svgPath("assignment_icon.svg");
   static String schoolHolidayIconSvg = _svgPath("school_holiday_icon");
   static String resultIconSvg = _svgPath("result_icon.svg");

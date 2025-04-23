@@ -3,7 +3,6 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 class AppSecureStorage {
   // Singleton instance
   AppSecureStorage._();
-  static final AppSecureStorage _instance = AppSecureStorage._();
 
   // Secure storage for sensitive data
   static final FlutterSecureStorage _secureStorage = FlutterSecureStorage();

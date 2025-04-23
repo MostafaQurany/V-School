@@ -6,7 +6,7 @@ import 'package:v_school/features/announcement/ui/home_screen_announcement.dart'
 import 'package:v_school/features/home/ui/widget/categories/home_screen_category.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
