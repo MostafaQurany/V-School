@@ -3,7 +3,7 @@ import 'package:v_school/core/extension/extensions.dart';
 import 'package:v_school/features/home/ui/widget/categories/home_screen_category_builder.dart';
 
 class HomeScreenCategory extends StatelessWidget {
-  const HomeScreenCategory({Key? key}) : super(key: key);
+  const HomeScreenCategory({super.key});
 
   @override
   Widget build(BuildContext context) {

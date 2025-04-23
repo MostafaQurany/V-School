@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:v_school/features/announcement/data/announcement.dart';
-import 'package:v_school/features/announcement/data/get_announcements_response.dart';
 import 'package:v_school/features/announcement/repo/announcement_repo.dart';
 
 part 'announcement_state.dart';

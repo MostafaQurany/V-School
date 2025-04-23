@@ -10,7 +10,7 @@ import 'package:v_school/features/authentication/ui/widgets/email_text_form_fiel
 import 'package:v_school/features/authentication/ui/widgets/forget_password_state_widget.dart';
 
 class ForgotPassword extends StatelessWidget {
-  const ForgotPassword({Key? key}) : super(key: key);
+  const ForgotPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
