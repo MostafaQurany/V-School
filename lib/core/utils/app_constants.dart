@@ -8,6 +8,7 @@ class AppConstants {
 
   /// App Secure Storage constants
   static String userToken = "User_Token";
+  static String saveUserKey = "Save_User_key";
   // screen padding
   static EdgeInsets screenPadding =
       EdgeInsets.symmetric(vertical: 10.h, horizontal: 20.w);

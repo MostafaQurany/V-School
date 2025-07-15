@@ -39,6 +39,8 @@ class HomeScreen extends StatelessWidget {
               HomeScreenAnnouncement(),
               // category
               HomeScreenCategory(),
+              // add the listView to show all the class cards 
+              
             ],
           ),
         ),

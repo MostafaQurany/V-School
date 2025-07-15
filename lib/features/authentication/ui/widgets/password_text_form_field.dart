@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:v_school/core/helpers/app_text_form_validation.dart';
 import 'package:v_school/core/widgets/custom_text_form_field.dart';
 import 'package:v_school/features/authentication/cubit/login_cubit.dart';
 
@@ -27,6 +28,7 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
           hintText: "Enter your Password",
           controller: LoginCubit.get(context).passwordController,
           isObscureText: obscureText,
+          validator: AppTextFormValidation.validatePassword,
           suffixWidget: GestureDetector(
             onTap: () {
               setState(() {
