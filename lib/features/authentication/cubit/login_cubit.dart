@@ -23,6 +23,9 @@ class LoginCubit extends Cubit<LoginState> {
   bool rememberMe = false;
 
   Future<void> login() async {
+    if (loginRole == LoginRole.none) {
+      return emit(const LoginState.loginError("Please select a role"));
+    }
     if (formKey.currentState!.validate()) {
       emit(const LoginState.loginLoading());
       try {
@@ -37,6 +40,12 @@ class LoginCubit extends Cubit<LoginState> {
             AppSecureStorage.saveData(
                 key: AppConstants.userToken,
                 value: data.userData?.accessToken ?? '');
+            if (rememberMe) {
+              AppSecureStorage.saveData(
+                key: AppConstants.saveUserKey,
+                value: rememberMe.toString(),
+              );
+            }
             emit(LoginState.loginSuccess());
           },
           error: (message) {

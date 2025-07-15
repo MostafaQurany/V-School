@@ -27,6 +27,8 @@ class CustomButton extends StatelessWidget {
         style: TextButton.styleFrom(
           backgroundColor: AppColors.primary,
           foregroundColor: AppColors.white,
+          disabledBackgroundColor: AppColors.secondary,
+          disabledForegroundColor: AppColors.black,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.w),
           ),

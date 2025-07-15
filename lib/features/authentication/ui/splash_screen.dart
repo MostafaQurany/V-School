@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:go_router/go_router.dart';
 import 'package:v_school/core/extension/extensions.dart';
 import 'package:v_school/core/route/Routes.dart';
 import 'package:v_school/core/utils/app_constants.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -23,9 +23,18 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future<void> _checkUserToken() async {
     String? userToken = await _secureStorage.read(key: AppConstants.userToken);
+    String? isUserSaveToken =
+        await _secureStorage.read(key: AppConstants.saveUserKey);
+    bool goToLoginScreen = userToken.isNullOrEmpty
+        ? true
+        : isUserSaveToken!.contains("true")
+            ? false
+            : true;
+    _checkifthereIsToken(goToLoginScreen);
+  }
 
-    if (!userToken.isNullOrEmpty) {
-      print("userToken : $userToken");
+  _checkifthereIsToken(bool goToLoginScreen) {
+    if (!goToLoginScreen) {
       // User is authenticated, go to HomeScreen
       context.go(Routes.homeScreen);
     } else {

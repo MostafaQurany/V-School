@@ -5,6 +5,7 @@ import 'package:v_school/core/utils/app_constants.dart';
 import 'package:v_school/core/widgets/animated_entrance.dart';
 import 'package:v_school/core/widgets/custom_button.dart';
 import 'package:v_school/features/authentication/cubit/login_cubit.dart';
+import 'package:v_school/features/authentication/data/model/login_request.dart';
 import 'package:v_school/features/authentication/ui/widgets/email_text_form_field.dart';
 import 'package:v_school/features/authentication/ui/widgets/login_screen_state_widget.dart';
 import 'package:v_school/features/authentication/ui/widgets/logo_head_title_login_screen.dart';

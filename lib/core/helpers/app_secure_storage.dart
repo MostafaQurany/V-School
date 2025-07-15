@@ -22,4 +22,5 @@ class AppSecureStorage {
   static Future<void> deleteData(String key) async {
     await _secureStorage.delete(key: key);
   }
+  
 }
